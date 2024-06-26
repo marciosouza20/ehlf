@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  dvwa:
+    image: "vulnerables/web-dvwa"
+    networks:
+      - global
+    hostname: dvwa.ehlf.example.net
+    restart: "always"
+    networks:
+      global:
+        ipv4_address: 192.168.1.10
+
+  ftp:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.ftp
+    image: ehlf-ftp:v1
+    restart: always
+    hostname: ftp.ehlf.example.net
+    networks:
+      global:
+        ipv4_address: 192.168.1.20
+
+  http:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.http
+    image: ehlf-http:v1
+    restart: always
+    hostname: http.ehlf.example.net
+    networks:
+      global:
+        ipv4_address: 192.168.1.30
+
+  http2:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.http2
+    image: ehlf-http2:v1
+    restart: always
+    hostname: http2.ehlf.example.net
+    networks:
+      global:
+        ipv4_address: 192.168.1.40
+networks:
+  global:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
