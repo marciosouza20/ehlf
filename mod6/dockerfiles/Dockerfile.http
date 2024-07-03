@@ -11,7 +11,7 @@ RUN apt-get -y install systemctl supervisor iproute2 apache2 php netcat-traditio
 # 3. Copy backdoor file generate with weevelly
 ## weevely generate 123456 back.php
 COPY config_templates/http/back.php /var/www/html/back.php
-## copy simple-backdor
+## copy simple-backdoor
 COPY config_templates/http/index.php /var/www/html/index.php
 
 ## 4. Creating user gohacking e trocando a senha do root para 

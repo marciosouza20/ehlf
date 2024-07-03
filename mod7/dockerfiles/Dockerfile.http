@@ -1,0 +1,55 @@
+FROM debian:12
+LABEL maintainer="ms109"
+SHELL ["/bin/bash", "-c"]
+
+# 1. Updated container system
+RUN apt update && apt upgrade -y
+
+# 2. Install tools
+RUN apt-get -y install systemctl supervisor iproute2 apache2 php netcat-traditional ncat openssl strace openssh-server build-essential sudo 
+
+# 3. Copy backdoor file generate with weevelly
+## copy simple-backdor
+COPY config_templates/http/index.php /var/www/html/index.php
+
+## 4. Creating user gohacking e trocando a senha do root para 
+RUN useradd -s /bin/bash -m gohacking && echo gohacking:4c6b5bc059e155f2 | chpasswd
+RUN echo root:4c6b5bc059e155f2 | chpasswd
+
+## 5. Copy auditoria.c
+COPY config_templates/http/auditoria.c /bin
+
+## 5.1 Compiling binary
+RUN gcc /bin/auditoria.c -o /bin/auditoria
+RUN chown gohacking /bin/auditoria
+RUN chmod 4755 /bin/auditoria
+
+## 5.2 Creating flag1.txt
+RUN echo -e "1. Efetue uma escalação de privilegio horizontal e se torne gohacking.\nPara isso encontre auditoria." > /var/www/html/flag.txt
+
+## 5.3 Creating the flag2.txt
+RUN mkdir -p /home/gohacking/auditoria
+RUN chown gohacking:gohacking /home/gohacking/auditoria
+RUN chmod 700 /home/gohacking/auditoria
+RUN echo -e "2. Agora gohacking explore o verdadeiro auditoria e se torne root." > /home/gohacking/auditoria/flag2.txt
+
+## 5.4 Implementing the true-auditoria
+COPY config_templates/http/true-auditoria.c /sbin
+RUN gcc /sbin/true-auditoria.c -o /home/gohacking/auditoria/true-auditoria
+RUN chown root /home/gohacking/auditoria/true-auditoria
+RUN chmod 4755 /home/gohacking/auditoria/true-auditoria
+
+## 5.5 Creating the flag3.txt
+RUN echo -e "3. Parabéns! Agora você conhece o caminho do sequestro de PATH." > /root/flag3.txt
+
+# 6. Adjusting SSH
+RUN mkdir -p /run/sshd
+
+# 7. Configuring the start services
+COPY config_templates/supervisord/httpd.conf /etc/supervisor/conf.d/httpd.conf
+COPY config_templates/supervisord/ssh.conf /etc/supervisor/conf.d/ssh.conf
+
+COPY config_templates/supervisord.conf /etc/supervisor/supervisord.conf
+
+# 8. Set Entryppoint
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  http:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.http
+    image: ehlf-http-mod7:v1
+    restart: always
+    hostname: http.ehlf.example.net
+    networks:
+      global-mod7:
+        ipv4_address: 192.168.2.30
+
+networks:
+  global-mod7:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: 192.168.2.0/24
