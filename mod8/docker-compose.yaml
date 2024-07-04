@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  ftp:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.ftp
+    image: ehlf-ftp-mod8:v1
+    restart: always
+    hostname: ftp.ehlf.example.net
+    networks:
+      global:
+        ipv4_address: 192.168.3.10
+      internal_1:
+        ipv4_address: 172.16.250.10
+
+  http:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.http
+    image: ehlf-http-mod8:v1
+    restart: always
+    hostname: http.ehlf.example.net
+    networks:
+      internal_1:
+        ipv4_address: 172.16.250.11
+
+  http2:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.http2
+    image: ehlf-http2-mod8:v1
+    restart: always
+    hostname: http2.ehlf.example.net
+    networks:
+      internal_1:
+        ipv4_address: 172.16.250.21
+      internal_2:
+        ipv4_address: 172.16.254.21
+
+  http3:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.http3
+    image: ehlf-http3-mod8:v1
+    restart: always
+    hostname: http3.ehlf.example.net
+    networks:
+      internal_2:
+        ipv4_address: 172.16.254.100
+
+networks:
+  global:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: 192.168.3.0/24
+  internal_1:
+    driver: "bridge"
+    driver_opts:
+      com.docker.network.bridge.enable_ip_masquerade: "false"
+    ipam:
+      config:
+        - subnet: 172.16.250.0/24
+  internal_2:
+    driver: "bridge"
+    driver_opts:
+      com.docker.network.bridge.enable_ip_masquerade: "false"
+    ipam:
+      config:
+        - subnet: 172.16.254.0/24

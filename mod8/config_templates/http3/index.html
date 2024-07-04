@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="pt"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Debian -- Informações de segurança </title>
+  <link rel="author" href="mailto:webmaster@debian.org">
+  <meta name="Generator" content="WML 2.32.0">
+  <meta name="Modified" content="2024-07-03 23:45:18">
+  <meta name="viewport" content="width=device-width">
+  <meta name="mobileoptimized" content="300">
+  <meta name="HandheldFriendly" content="true">
+<link rel="alternate" type="application/rss+xml" title="Debian Security Advisories (titles only)" href="https://www.debian.org/security/dsa">
+<link rel="alternate" type="application/rss+xml" title="Debian Security Advisories (summaries)" href="https://www.debian.org/security/dsa-long">
+<link href="index_arquivos/debhome.css" rel="stylesheet" type="text/css">
+   <link href="index_arquivos/startpage.css" rel="stylesheet" type="text/css">
+   <link href="index_arquivos/5img-carousel-slider.css" rel="stylesheet" type="text/css">
+  <link href="index_arquivos/debian-pt.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="shortcut icon" href="https://www.debian.org/security/favicon.ico">
+  <meta name="Keywords" content="debian, GNU, linux, unix, código aberto, livre, DFSG">
+<link rel="search" type="application/opensearchdescription+xml" title="Pesquisa do site web do Debian" href="https://www.debian.org/search.pt.xml">
+<link href="data:text/css,%3Ais(%5Bid*%3D'google_ads_iframe'%5D%2C%5Bid*%3D'taboola-'%5D%2C.taboolaHeight%2C.taboola-placeholder%2C%23credential_picker_container%2C%23credentials-picker-container%2C%23credential_picker_iframe%2C%5Bid*%3D'google-one-tap-iframe'%5D%2C%23google-one-tap-popup-container%2C.google-one-tap-modal-div%2C%23amp_floatingAdDiv%2C%23ez-content-blocker-container)%20%7Bdisplay%3Anone!important%3Bmin-height%3A0!important%3Bheight%3A0!important%3B%7D" rel="stylesheet" type="text/css"></head>
+<body>
+<div id="header">
+  <div id="upperheader">
+    <div id="logo">
+    <a href="https://www.debian.org/" title="Página principal do Debian"><img src="index_arquivos/openlogo-50.png" alt="Debian"></a>
+    </div> <!-- end logo -->
+    <div id="searchbox">
+      <form name="p" method="get" action="https://search.debian.org/cgi-bin/omega">
+      <p>
+<input type="hidden" name="DB" value="pt">
+        <input name="P" size="14">
+        <input type="submit" value="Busca">
+      </p>
+      </form>
+    </div>   <!-- end sitetools -->
+  </div> <!-- end upperheader -->
+  <!--UdmComment-->
+  <div id="navbar">
+    <p class="hidecss"><a href="#content">Pular "Quicknav"</a></p>
+    <ul>
+      <!-- Link to Debian's own Social Media resources -->
+      <li><a href="https://bits.debian.org/" title="Bits from Debian">Blog</a></li>
+      <li><a href="https://micronews.debian.org/" title="Micronews from Debian">Micronews</a></li>
+      <li><a href="https://planet.debian.org/" title="The Planet of Debian">Planet</a></li>
+    </ul>
+  </div> <!-- end navbar -->
+  <p id="breadcrumbs">&nbsp; </p>
+</div> <!-- end header -->
+<!--/UdmComment-->
+<div id="content">
+<h1>Informações de segurança</h1>
+<link href="index_arquivos/font-awesome.css" rel="stylesheet" type="text/css">
+<ul class="toc">
+<li><a href="#keeping-secure">Mantendo seu sistema Debian seguro</a></li>
+<li><a href="#DSAS">Alertas recentes</a></li>
+<li><a href="#infos">Fontes das informações de segurança</a></li>
+</ul>
+<aside>
+<p><span class="fas fa-caret-right fa-3x"></span> O Debian leva a segurança
+muito a sério. Lidamos com todos os problemas de segurança trazidos ao nosso
+conhecimento e garantimos que sejam corrigidos dentro de um prazo razoável.</p>
+</aside>
+<p>
+A experiência mostra que a <q>segurança através da obscuridade</q> nunca
+funciona. Portanto, a divulgação pública permite soluções mais rápidas e
+melhores dos problemas de segurança. A esse respeito, esta página aborda o
+status do Debian em relação a várias falhas de segurança conhecidas, que podem
+afetar potencialmente o sistema operacional Debian.
+</p>
+<p>
+O projeto Debian coordena muitos alertas de segurança com outros(as)
+fornecedores(as) de software livre e, como resultado, esses alertas são
+publicados no mesmo dia em que uma vulnerabilidade é tornada pública.
+Para receber os alertas de segurança do Debian mais recentes, por favor
+inscreva-se na lista de discussão
+<a href="https://lists.debian.org/debian-security-announce/">debian-security-announce</a>.
+</p>
+<p>
+O Debian também participa dos esforços de padronização de segurança:
+</p>
+<ul>
+  <li>Os <a href="#DSAS">alertas de segurança Debian</a> são <a href="https://www.debian.org/security/cve-compatibility">compatíveis com o CVE</a></li>
+  <li>O Debian <a href="https://www.debian.org/security/oval/">publica</a> seus informativos de segurança usando o <a href="https://github.com/CISecurity/OVALRepo">Open Vulnerability Assessment Language (OVAL)</a></li>
+</ul>
+<h2><a id="keeping-secure">Mantendo seu sistema Debian seguro</a></h2>
+<p>
+Os pacotes
+<a href="https://packages.debian.org/stable/admin/unattended-upgrades">unattended-upgrades</a>
+podem ser instalado para manter o computador atualizado com as atualizações de
+segurança (e outras) mais recentes automaticamente.
+A <a href="https://wiki.debian.org/UnattendedUpgrades">página wiki</a> tem
+informações mais detalhadas sobre como configurar manualmente o
+<tt>unattended-upgrades</tt>.
+</p><p>
+Para mais informações sobre problemas de segurança no Debian, por favor
+consulte nossa FAQ e nossa documentação:
+</p>
+<p style="text-align:center"><button type="button"><span class="fas fa-book-open fa-2x"></span> <a href="https://www.debian.org/security/faq">FAQ sobre segurança</a></button> <button type="button"><span class="fas fa-book-open fa-2x"></span> <a href="https://www.debian.org/doc/user-manuals#securing">protegendo o Debian</a></button></p>
+<aside class="light">
+  <span class="fa fa-rss fa-5x"></span>
+</aside>
+<h2><a id="DSAS">Alertas recentes</a> <a class="rss_logo" style="float: none;" href="https://www.debian.org/security/dsa">RSS</a></h2>
+<p>Estes são os recentes alertas de segurança do Debian (DSA - Debian Security
+Advisories) publicados na lista <a href="https://lists.debian.org/debian-security-announce/">debian-security-announce</a>.
+<br><b>T</b> é o link para as informações do
+<a href="https://security-tracker.debian.org/tracker">rastreador de segurança Debian</a>,
+o número DSA está vinculado ao e-mail de anúncio.
+</p><p>
+<tt>[03 Jul 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5725-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00136.html">DSA-5725-1 znc</a></strong> security update<br>
+<tt>[01 Jul 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5724-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00135.html">DSA-5724-1 openssh</a></strong> security update<br>
+<tt>[27 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5723-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00134.html">DSA-5723-1 plasma-workspace</a></strong> security update<br>
+<tt>[26 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5722-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00133.html">DSA-5722-1 libvpx</a></strong> security update<br>
+<tt>[26 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5721-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00132.html">DSA-5721-1 ffmpeg</a></strong> security update<br>
+<tt>[25 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5720-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00131.html">DSA-5720-1 chromium</a></strong> security update<br>
+<tt>[25 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5719-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00130.html">DSA-5719-1 emacs</a></strong> security update<br>
+<tt>[25 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5718-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00129.html">DSA-5718-1 org-mode</a></strong> security update<br>
+<tt>[24 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5715-2"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00128.html">DSA-5715-2 composer</a></strong> regression update<br>
+<tt>[20 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5717-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00127.html">DSA-5717-1 php8.2</a></strong> security update<br>
+<tt>[19 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5716-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00126.html">DSA-5716-1 chromium</a></strong> security update<br>
+<tt>[18 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5715-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00125.html">DSA-5715-1 composer</a></strong> security update<br>
+<tt>[18 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5714-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00124.html">DSA-5714-1 roundcube</a></strong> security update<br>
+<tt>[16 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5713-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00123.html">DSA-5713-1 libndp</a></strong> security update<br>
+<tt>[15 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5712-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00122.html">DSA-5712-1 ffmpeg</a></strong> security update<br>
+<tt>[15 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5711-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00121.html">DSA-5711-1 thunderbird</a></strong> security update<br>
+<tt>[14 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5710-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00120.html">DSA-5710-1 chromium</a></strong> security update<br>
+<tt>[12 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5709-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00119.html">DSA-5709-1 firefox-esr</a></strong> security update<br>
+<tt>[11 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5708-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00118.html">DSA-5708-1 cyrus-imapd</a></strong> security update<br>
+<tt>[11 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5707-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00117.html">DSA-5707-1 vlc</a></strong> security update<br>
+<tt>[05 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5706-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00116.html">DSA-5706-1 libarchive</a></strong> security update<br>
+<tt>[05 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5705-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00115.html">DSA-5705-1 tinyproxy</a></strong> security update<br>
+<tt>[05 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5704-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00114.html">DSA-5704-1 pillow</a></strong> security update<br>
+<tt>[02 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5703-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00113.html">DSA-5703-1 linux</a></strong> security update<br>
+<tt>[01 Jun 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5702-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00112.html">DSA-5702-1 gst-plugins-base1.0</a></strong> security update<br>
+<tt>[31 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5701-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00111.html">DSA-5701-1 chromium</a></strong> security update<br>
+<tt>[29 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5700-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00110.html">DSA-5700-1 python-pymysql</a></strong> security update<br>
+<tt>[24 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5699-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00109.html">DSA-5699-1 redmine</a></strong> security update<br>
+<tt>[24 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5698-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00108.html">DSA-5698-1 ruby-rack</a></strong> security update<br>
+<tt>[24 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5697-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00107.html">DSA-5697-1 chromium</a></strong> security update<br>
+<tt>[22 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5696-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00106.html">DSA-5696-1 chromium</a></strong> security update<br>
+<tt>[22 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5695-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00105.html">DSA-5695-1 webkit2gtk</a></strong> security update<br>
+<tt>[17 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5694-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00104.html">DSA-5694-1 chromium</a></strong> security update<br>
+<tt>[17 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5693-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00103.html">DSA-5693-1 thunderbird</a></strong> security update<br>
+<tt>[15 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5692-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00102.html">DSA-5692-1 ghostscript</a></strong> security update<br>
+<tt>[15 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5691-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00101.html">DSA-5691-1 firefox-esr</a></strong> security update<br>
+<tt>[15 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5690-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00099.html">DSA-5690-1 libreoffice</a></strong> security update<br>
+<tt>[15 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5689-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00100.html">DSA-5689-1 chromium</a></strong> security update<br>
+<tt>[12 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5688-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00098.html">DSA-5688-1 atril</a></strong> security update<br>
+<tt>[10 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5687-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00097.html">DSA-5687-1 chromium</a></strong> security update<br>
+<tt>[09 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5686-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00096.html">DSA-5686-1 dav1d</a></strong> security update<br>
+<tt>[09 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5682-2"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00094.html">DSA-5682-2 glib2.0</a></strong> regression update<br>
+<tt>[08 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5685-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00093.html">DSA-5685-1 wordpress</a></strong> security update<br>
+<tt>[09 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5684-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00095.html">DSA-5684-1 webkit2gtk</a></strong> security update<br>
+<tt>[08 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5683-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00092.html">DSA-5683-1 chromium</a></strong> security update<br>
+<tt>[07 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5682-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00091.html">DSA-5682-1 glib2.0</a></strong> security update<br>
+<tt>[06 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5681-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00090.html">DSA-5681-1 linux</a></strong> security update<br>
+<tt>[06 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5680-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00089.html">DSA-5680-1 linux</a></strong> security update<br>
+<tt>[03 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5679-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00088.html">DSA-5679-1 less</a></strong> security update<br>
+<tt>[03 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5678-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00087.html">DSA-5678-1 glibc</a></strong> security update<br>
+<tt>[03 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5677-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00086.html">DSA-5677-1 ruby3.1</a></strong> security update<br>
+<tt>[02 May 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5676-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00085.html">DSA-5676-1 chromium</a></strong> security update<br>
+<tt>[26 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5675-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00084.html">DSA-5675-1 chromium</a></strong> security update<br>
+<tt>[25 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5674-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00083.html">DSA-5674-1 pdns-recursor</a></strong> security update<br>
+<tt>[23 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5673-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00082.html">DSA-5673-1 glibc</a></strong> security update<br>
+<tt>[22 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5672-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00081.html">DSA-5672-1 openjdk-17</a></strong> security update<br>
+<tt>[22 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5671-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00080.html">DSA-5671-1 openjdk-11</a></strong> security update<br>
+<tt>[22 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5670-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00079.html">DSA-5670-1 thunderbird</a></strong> security update<br>
+<tt>[22 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5669-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00078.html">DSA-5669-1 guix</a></strong> security update<br>
+<tt>[20 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5668-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00077.html">DSA-5668-1 chromium</a></strong> security update<br>
+<tt>[19 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5667-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00076.html">DSA-5667-1 tomcat9</a></strong> security update<br>
+<tt>[19 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5666-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00075.html">DSA-5666-1 flatpak</a></strong> security update<br>
+<tt>[17 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5665-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00074.html">DSA-5665-1 tomcat10</a></strong> security update<br>
+<tt>[17 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5664-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00073.html">DSA-5664-1 jetty9</a></strong> security update<br>
+<tt>[17 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5663-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00072.html">DSA-5663-1 firefox-esr</a></strong> security update<br>
+<tt>[16 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5655-2"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00071.html">DSA-5655-2 cockpit</a></strong> regression update<br>
+<tt>[16 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5662-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00070.html">DSA-5662-1 apache2</a></strong> security update<br>
+<tt>[15 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5661-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00069.html">DSA-5661-1 php8.2</a></strong> security update<br>
+<tt>[15 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5660-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00068.html">DSA-5660-1 php7.4</a></strong> security update<br>
+<tt>[14 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5659-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00067.html">DSA-5659-1 trafficserver</a></strong> security update<br>
+<tt>[13 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5658-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00066.html">DSA-5658-1 linux</a></strong> security update<br>
+<tt>[12 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5657-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00065.html">DSA-5657-1 xorg-server</a></strong> security update<br>
+<tt>[11 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5656-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00064.html">DSA-5656-1 chromium</a></strong> security update<br>
+<tt>[04 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5655-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00063.html">DSA-5655-1 cockpit</a></strong> security update<br>
+<tt>[03 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5654-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00062.html">DSA-5654-1 chromium</a></strong> security update<br>
+<tt>[03 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5653-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00061.html">DSA-5653-1 gtkwave</a></strong> security update<br>
+<tt>[02 Apr 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5652-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00060.html">DSA-5652-1 py7zr</a></strong> security update<br>
+<tt>[31 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5651-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00059.html">DSA-5651-1 mediawiki</a></strong> security update<br>
+<tt>[31 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5650-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00058.html">DSA-5650-1 util-linux</a></strong> security update<br>
+<tt>[29 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5649-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00057.html">DSA-5649-1 xz-utils</a></strong> security update<br>
+<tt>[28 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5648-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00056.html">DSA-5648-1 chromium</a></strong> security update<br>
+<tt>[24 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5647-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00055.html">DSA-5647-1 samba</a></strong> security update<br>
+<tt>[24 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5646-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00054.html">DSA-5646-1 cacti</a></strong> security update<br>
+<tt>[23 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5645-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00053.html">DSA-5645-1 firefox-esr</a></strong> security update<br>
+<tt>[21 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5644-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00052.html">DSA-5644-1 thunderbird</a></strong> security update<br>
+<tt>[21 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5643-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00051.html">DSA-5643-1 firefox-esr</a></strong> security update<br>
+<tt>[20 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5626-2"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00050.html">DSA-5626-2 pdns-recursor</a></strong> regression update<br>
+<tt>[20 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5642-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00049.html">DSA-5642-1 php-dompdf-svg-lib</a></strong> security update<br>
+<tt>[19 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5641-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00048.html">DSA-5641-1 fontforge</a></strong> security update<br>
+<tt>[14 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5640-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00046.html">DSA-5640-1 openvswitch</a></strong> security update<br>
+<tt>[13 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5639-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00045.html">DSA-5639-1 chromium</a></strong> security update<br>
+<tt>[10 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5638-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00044.html">DSA-5638-1 libuv1</a></strong> security update<br>
+<tt>[08 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5637-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00043.html">DSA-5637-1 squid</a></strong> security update<br>
+<tt>[06 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5636-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00042.html">DSA-5636-1 chromium</a></strong> security update<br>
+<tt>[04 Mar 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5635-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00041.html">DSA-5635-1 yard</a></strong> security update<br>
+<tt>[28 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5634-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00040.html">DSA-5634-1 chromium</a></strong> security update<br>
+<tt>[27 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5633-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00039.html">DSA-5633-1 knot-resolver</a></strong> security update<br>
+<tt>[26 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5632-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00047.html">DSA-5632-1 composer</a></strong> security update<br>
+<tt>[25 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5631-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00038.html">DSA-5631-1 iwd</a></strong> security update<br>
+<tt>[23 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5630-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00037.html">DSA-5630-1 thunderbird</a></strong> security update<br>
+<tt>[23 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5629-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00036.html">DSA-5629-1 chromium</a></strong> security update<br>
+<tt>[22 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5628-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00035.html">DSA-5628-1 imagemagick</a></strong> security update<br>
+<tt>[21 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5627-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00034.html">DSA-5627-1 firefox-esr</a></strong> security update<br>
+<tt>[18 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5626-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00033.html">DSA-5626-1 pdns-recursor</a></strong> security update<br>
+<tt>[16 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5625-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00032.html">DSA-5625-1 engrampa</a></strong> security update<br>
+<tt>[14 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5624-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00031.html">DSA-5624-1 edk2</a></strong> security update<br>
+<tt>[14 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5623-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00030.html">DSA-5623-1 postgresql-15</a></strong> security update<br>
+<tt>[14 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5622-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00029.html">DSA-5622-1 postgresql-13</a></strong> security update<br>
+<tt>[14 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5621-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00028.html">DSA-5621-1 bind9</a></strong> security update<br>
+<tt>[14 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5620-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00027.html">DSA-5620-1 unbound</a></strong> security update<br>
+<tt>[09 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5619-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00026.html">DSA-5619-1 libgit2</a></strong> security update<br>
+<tt>[08 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5618-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00025.html">DSA-5618-1 webkit2gtk</a></strong> security update<br>
+<tt>[08 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5617-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00024.html">DSA-5617-1 chromium</a></strong> security update<br>
+<tt>[05 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5616-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00023.html">DSA-5616-1 ruby-sanitize</a></strong> security update<br>
+<tt>[04 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5615-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00022.html">DSA-5615-1 runc</a></strong> security update<br>
+<tt>[03 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5614-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00021.html">DSA-5614-1 zbar</a></strong> security update<br>
+<tt>[01 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5613-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00020.html">DSA-5613-1 openjdk-17</a></strong> security update<br>
+<tt>[01 Feb 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5612-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00019.html">DSA-5612-1 chromium</a></strong> security update<br>
+<tt>[30 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5611-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00018.html">DSA-5611-1 glibc</a></strong> security update<br>
+<tt>[29 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5610-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00017.html">DSA-5610-1 redis</a></strong> security update<br>
+<tt>[28 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5609-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00016.html">DSA-5609-1 slurm-wlm</a></strong> security update<br>
+<tt>[27 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5608-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00015.html">DSA-5608-1 gst-plugins-bad1.0</a></strong> security update<br>
+<tt>[24 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5607-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00014.html">DSA-5607-1 chromium</a></strong> security update<br>
+<tt>[24 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5606-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00013.html">DSA-5606-1 firefox-esr</a></strong> security update<br>
+<tt>[24 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5605-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00012.html">DSA-5605-1 thunderbird</a></strong> security update<br>
+<tt>[23 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5604-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00011.html">DSA-5604-1 openjdk-11</a></strong> security update<br>
+<tt>[23 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5603-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00010.html">DSA-5603-1 xorg-server</a></strong> security update<br>
+<tt>[17 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5602-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00009.html">DSA-5602-1 chromium</a></strong> security update<br>
+<tt>[12 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5601-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00008.html">DSA-5601-1 php-phpseclib3</a></strong> security update<br>
+<tt>[12 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5600-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00007.html">DSA-5600-1 php-phpseclib</a></strong> security update<br>
+<tt>[12 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5599-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00006.html">DSA-5599-1 phpseclib</a></strong> security update<br>
+<tt>[10 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5598-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00005.html">DSA-5598-1 chromium</a></strong> security update<br>
+<tt>[04 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5597-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00004.html">DSA-5597-1 exim4</a></strong> security update<br>
+<tt>[04 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5596-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00003.html">DSA-5596-1 asterisk</a></strong> security update<br>
+<tt>[04 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5595-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00002.html">DSA-5595-1 chromium</a></strong> security update<br>
+<tt>[02 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5594-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00001.html">DSA-5594-1 linux</a></strong> security update<br>
+<tt>[01 Jan 2024]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5593-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2024/msg00000.html">DSA-5593-1 linux</a></strong> security update<br>
+<tt>[30 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5592-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00289.html">DSA-5592-1 libspreadsheet-parseexcel-perl</a></strong> security update<br>
+<tt>[28 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5591-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00288.html">DSA-5591-1 libssh</a></strong> security update<br>
+<tt>[28 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5590-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00287.html">DSA-5590-1 haproxy</a></strong> security update<br>
+<tt>[27 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5589-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00286.html">DSA-5589-1 nodejs</a></strong> security update<br>
+<tt>[24 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5588-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00285.html">DSA-5588-1 putty</a></strong> security update<br>
+<tt>[23 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5587-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00284.html">DSA-5587-1 curl</a></strong> security update<br>
+<tt>[22 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5586-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00283.html">DSA-5586-1 openssh</a></strong> security update<br>
+<tt>[21 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5585-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00282.html">DSA-5585-1 chromium</a></strong> security update<br>
+<tt>[21 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5584-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00281.html">DSA-5584-1 bluez</a></strong> security update<br>
+<tt>[21 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5583-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00280.html">DSA-5583-1 gst-plugins-bad1.0</a></strong> security update<br>
+<tt>[21 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5582-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00279.html">DSA-5582-1 thunderbird</a></strong> security update<br>
+<tt>[20 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5581-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00278.html">DSA-5581-1 firefox-esr</a></strong> security update<br>
+<tt>[18 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5580-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00277.html">DSA-5580-1 webkit2gtk</a></strong> security update<br>
+<tt>[17 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5579-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00276.html">DSA-5579-1 freeimage</a></strong> security update<br>
+<tt>[17 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5576-2"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00275.html">DSA-5576-2 xorg-server</a></strong> security update<br>
+<tt>[15 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5578-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00274.html">DSA-5578-1 ghostscript</a></strong> security update<br>
+<tt>[13 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5577-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00273.html">DSA-5577-1 chromium</a></strong> security update<br>
+<tt>[13 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5576-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00272.html">DSA-5576-1 xorg-server</a></strong> security update<br>
+<tt>[11 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5575-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00271.html">DSA-5575-1 webkit2gtk</a></strong> security update<br>
+<tt>[11 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5574-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00270.html">DSA-5574-1 libreoffice</a></strong> security update<br>
+<tt>[09 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5573-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00269.html">DSA-5573-1 chromium</a></strong> security update<br>
+<tt>[04 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5572-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00268.html">DSA-5572-1 roundcube</a></strong> security update<br>
+<tt>[01 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5571-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00267.html">DSA-5571-1 rabbitmq-server</a></strong> security update<br>
+<tt>[01 Dec 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5570-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00266.html">DSA-5570-1 nghttp2</a></strong> security update<br>
+<tt>[30 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5569-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00265.html">DSA-5569-1 chromium</a></strong> security update<br>
+<tt>[27 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5568-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00264.html">DSA-5568-1 fastdds</a></strong> security update<br>
+<tt>[27 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5567-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00263.html">DSA-5567-1 tiff</a></strong> security update<br>
+<tt>[26 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5566-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00262.html">DSA-5566-1 thunderbird</a></strong> security update<br>
+<tt>[25 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5565-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00261.html">DSA-5565-1 gst-plugins-bad1.0</a></strong> security update<br>
+<tt>[24 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5564-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00260.html">DSA-5564-1 gimp</a></strong> security update<br>
+<tt>[23 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5563-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00259.html">DSA-5563-1 intel-microcode</a></strong> security update<br>
+<tt>[22 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5562-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00258.html">DSA-5562-1 tor</a></strong> security update<br>
+<tt>[22 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5561-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00257.html">DSA-5561-1 firefox-esr</a></strong> security update<br>
+<tt>[20 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5560-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00256.html">DSA-5560-1 strongswan</a></strong> security update<br>
+<tt>[19 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5559-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00255.html">DSA-5559-1 wireshark</a></strong> security update<br>
+<tt>[18 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5558-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00254.html">DSA-5558-1 netty</a></strong> security update<br>
+<tt>[17 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5557-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00253.html">DSA-5557-1 webkit2gtk</a></strong> security update<br>
+<tt>[15 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5556-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00252.html">DSA-5556-1 chromium</a></strong> security update<br>
+<tt>[15 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5555-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00251.html">DSA-5555-1 openvpn</a></strong> security update<br>
+<tt>[13 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5554-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00250.html">DSA-5554-1 postgresql-13</a></strong> security update<br>
+<tt>[13 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5553-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00249.html">DSA-5553-1 postgresql-15</a></strong> security update<br>
+<tt>[12 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5552-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00248.html">DSA-5552-1 ffmpeg</a></strong> security update<br>
+<tt>[09 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5551-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00247.html">DSA-5551-1 chromium</a></strong> security update<br>
+<tt>[08 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5550-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00246.html">DSA-5550-1 cacti</a></strong> security update<br>
+<tt>[05 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5549-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00245.html">DSA-5549-1 trafficserver</a></strong> security update<br>
+<tt>[05 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5548-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00244.html">DSA-5548-1 openjdk-17</a></strong> security update<br>
+<tt>[04 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5547-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00243.html">DSA-5547-1 pmix</a></strong> security update<br>
+<tt>[02 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5546-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00242.html">DSA-5546-1 chromium</a></strong> security update<br>
+<tt>[02 Nov 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5545-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00241.html">DSA-5545-1 vlc</a></strong> security update<br>
+<tt>[31 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5544-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00240.html">DSA-5544-1 zookeeper</a></strong> security update<br>
+<tt>[31 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5543-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00239.html">DSA-5543-1 open-vm-tools</a></strong> security update<br>
+<tt>[30 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5542-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00238.html">DSA-5542-1 request-tracker4</a></strong> security update<br>
+<tt>[30 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5541-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00237.html">DSA-5541-1 request-tracker5</a></strong> security update<br>
+<tt>[30 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5540-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00236.html">DSA-5540-1 jetty9</a></strong> security update<br>
+<tt>[30 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5539-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00235.html">DSA-5539-1 node-browserify-sign</a></strong> security update<br>
+<tt>[27 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5538-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00234.html">DSA-5538-1 thunderbird</a></strong> security update<br>
+<tt>[27 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5537-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00233.html">DSA-5537-1 openjdk-11</a></strong> security update<br>
+<tt>[26 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5536-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00232.html">DSA-5536-1 chromium</a></strong> security update<br>
+<tt>[25 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5535-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00231.html">DSA-5535-1 firefox-esr</a></strong> security update<br>
+<tt>[25 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5534-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00230.html">DSA-5534-1 xorg-server</a></strong> security update<br>
+<tt>[24 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5533-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00229.html">DSA-5533-1 gst-plugins-bad1.0</a></strong> security update<br>
+<tt>[24 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5532-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00228.html">DSA-5532-1 openssl</a></strong> security update<br>
+<tt>[23 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5531-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00227.html">DSA-5531-1 roundcube</a></strong> security update<br>
+<tt>[22 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5530-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00226.html">DSA-5530-1 ruby-rack</a></strong> security update<br>
+<tt>[20 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5527-2"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00225.html">DSA-5527-2 webkit2gtk</a></strong> regression update<br>
+<tt>[17 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5529-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00224.html">DSA-5529-1 slurm-wlm</a></strong> security update<br>
+<tt>[16 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5522-3"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00223.html">DSA-5522-3 tomcat9</a></strong> regression update<br>
+<tt>[16 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5528-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00222.html">DSA-5528-1 node-babel7</a></strong> security update<br>
+<tt>[12 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5522-2"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00221.html">DSA-5522-2 tomcat9</a></strong> regression update<br>
+<tt>[12 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5527-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00220.html">DSA-5527-1 webkit2gtk</a></strong> security update<br>
+<tt>[12 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5526-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00219.html">DSA-5526-1 chromium</a></strong> security update<br>
+<tt>[11 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5525-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00218.html">DSA-5525-1 samba</a></strong> security update<br>
+<tt>[11 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5524-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00217.html">DSA-5524-1 libcue</a></strong> security update<br>
+<tt>[11 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5523-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00216.html">DSA-5523-1 curl</a></strong> security update<br>
+<tt>[10 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5522-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00215.html">DSA-5522-1 tomcat9</a></strong> security update<br>
+<tt>[10 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5521-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00214.html">DSA-5521-1 tomcat10</a></strong> security update<br>
+<tt>[10 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5520-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00213.html">DSA-5520-1 mediawiki</a></strong> security update<br>
+<tt>[06 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5519-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00212.html">DSA-5519-1 grub2</a></strong> security update<br>
+<tt>[05 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5518-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00211.html">DSA-5518-1 libvpx</a></strong> security update<br>
+<tt>[05 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5517-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00210.html">DSA-5517-1 libx11</a></strong> security update<br>
+<tt>[05 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5516-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00209.html">DSA-5516-1 libxpm</a></strong> security update<br>
+<tt>[04 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5515-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00208.html">DSA-5515-1 chromium</a></strong> security update<br>
+<tt>[03 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5514-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00207.html">DSA-5514-1 glibc</a></strong> security update<br>
+<tt>[03 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5513-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00206.html">DSA-5513-1 thunderbird</a></strong> security update<br>
+<tt>[02 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5512-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00205.html">DSA-5512-1 exim4</a></strong> security update<br>
+<tt>[01 Oct 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5511-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00204.html">DSA-5511-1 mosquitto</a></strong> security update<br>
+<tt>[29 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5510-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00203.html">DSA-5510-1 libvpx</a></strong> security update<br>
+<tt>[29 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5509-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00202.html">DSA-5509-1 firefox-esr</a></strong> security update<br>
+<tt>[29 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5508-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00201.html">DSA-5508-1 chromium</a></strong> security update<br>
+<tt>[28 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5507-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00200.html">DSA-5507-1 jetty9</a></strong> security update<br>
+<tt>[28 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5506-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00199.html">DSA-5506-1 firefox-esr</a></strong> security update<br>
+<tt>[25 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5505-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00198.html">DSA-5505-1 lldpd</a></strong> security update<br>
+<tt>[22 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5504-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00197.html">DSA-5504-1 bind9</a></strong> security update<br>
+<tt>[20 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5503-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00196.html">DSA-5503-1 netatalk</a></strong> security update<br>
+<tt>[18 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5502-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00195.html">DSA-5502-1 xrdp</a></strong> security update<br>
+<tt>[18 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5501-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00194.html">DSA-5501-1 gnome-shell</a></strong> security update<br>
+<tt>[18 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5500-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00193.html">DSA-5500-1 flac</a></strong> security update<br>
+<tt>[18 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5499-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00192.html">DSA-5499-1 chromium</a></strong> security update<br>
+<tt>[13 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5497-2"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00191.html">DSA-5497-2 libwebp</a></strong> security update<br>
+<tt>[15 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5498-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00190.html">DSA-5498-1 thunderbird</a></strong> security update<br>
+<tt>[13 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5497-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00189.html">DSA-5497-1 libwebp</a></strong> security update<br>
+<tt>[13 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5496-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00188.html">DSA-5496-1 firefox-esr</a></strong> security update<br>
+<tt>[11 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5495-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00187.html">DSA-5495-1 frr</a></strong> security update<br>
+<tt>[10 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5494-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00186.html">DSA-5494-1 mutt</a></strong> security update<br>
+<tt>[10 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5493-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00185.html">DSA-5493-1 open-vm-tools</a></strong> security update<br>
+<tt>[09 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5492-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00184.html">DSA-5492-1 linux</a></strong> security update<br>
+<tt>[07 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5491-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00183.html">DSA-5491-1 chromium</a></strong> security update<br>
+<tt>[06 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5490-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00182.html">DSA-5490-1 aom</a></strong> security update<br>
+<tt>[04 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5489-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00181.html">DSA-5489-1 file</a></strong> security update<br>
+<tt>[03 Sep 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5488-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00180.html">DSA-5488-1 thunderbird</a></strong> security update<br>
+<tt>[31 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5487-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00179.html">DSA-5487-1 chromium</a></strong> security update<br>
+<tt>[30 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5486-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00178.html">DSA-5486-1 json-c</a></strong> security update<br>
+<tt>[30 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5485-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00177.html">DSA-5485-1 firefox-esr</a></strong> security update<br>
+<tt>[27 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5484-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00176.html">DSA-5484-1 librsvg</a></strong> security update<br>
+<tt>[25 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5483-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00175.html">DSA-5483-1 chromium</a></strong> security update<br>
+<tt>[24 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5482-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00174.html">DSA-5482-1 tryton-server</a></strong> security update<br>
+<tt>[20 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5481-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00173.html">DSA-5481-1 fastdds</a></strong> security update<br>
+<tt>[18 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5480-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00172.html">DSA-5480-1 linux</a></strong> security update<br>
+<tt>[17 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5479-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00171.html">DSA-5479-1 chromium</a></strong> security update<br>
+<tt>[16 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5478-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00170.html">DSA-5478-1 openjdk-11</a></strong> security update<br>
+<tt>[14 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5477-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00169.html">DSA-5477-1 samba</a></strong> security update<br>
+<tt>[12 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5476-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00168.html">DSA-5476-1 gst-plugins-ugly1.0</a></strong> security update<br>
+<tt>[11 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5475-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00167.html">DSA-5475-1 linux</a></strong> security update<br>
+<tt>[11 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5474-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00166.html">DSA-5474-1 intel-microcode</a></strong> security update<br>
+<tt>[08 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5473-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00165.html">DSA-5473-1 orthanc</a></strong> security update<br>
+<tt>[08 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5472-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00164.html">DSA-5472-1 cjose</a></strong> security update<br>
+<tt>[07 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5471-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00163.html">DSA-5471-1 libhtmlcleaner-java</a></strong> security update<br>
+<tt>[06 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5470-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00162.html">DSA-5470-1 python-werkzeug</a></strong> security update<br>
+<tt>[05 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5469-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00161.html">DSA-5469-1 thunderbird</a></strong> security update<br>
+<tt>[05 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5468-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00160.html">DSA-5468-1 webkit2gtk</a></strong> security update<br>
+<tt>[04 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5467-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00159.html">DSA-5467-1 chromium</a></strong> security update<br>
+<tt>[04 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5466-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00158.html">DSA-5466-1 ntpsec</a></strong> security update<br>
+<tt>[03 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5465-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00157.html">DSA-5465-1 python-django</a></strong> security update<br>
+<tt>[03 Aug 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5464-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00156.html">DSA-5464-1 firefox-esr</a></strong> security update<br>
+<tt>[30 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5463-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00155.html">DSA-5463-1 thunderbird</a></strong> security update<br>
+<tt>[30 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5462-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00154.html">DSA-5462-1 linux</a></strong> security update<br>
+<tt>[30 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5461-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00153.html">DSA-5461-1 linux</a></strong> security update<br>
+<tt>[26 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5460-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00152.html">DSA-5460-1 curl</a></strong> security update<br>
+<tt>[25 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5459-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00151.html">DSA-5459-1 amd64-microcode</a></strong> security update<br>
+<tt>[25 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5458-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00150.html">DSA-5458-1 openjdk-17</a></strong> security update<br>
+<tt>[22 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5457-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00149.html">DSA-5457-1 webkit2gtk</a></strong> security update<br>
+<tt>[20 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5456-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00148.html">DSA-5456-1 chromium</a></strong> security update<br>
+<tt>[17 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5455-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00147.html">DSA-5455-1 iperf3</a></strong> security update<br>
+<tt>[16 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5454-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00146.html">DSA-5454-1 kanboard</a></strong> security update<br>
+<tt>[16 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5453-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00145.html">DSA-5453-1 linux</a></strong> security update<br>
+<tt>[14 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5452-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00144.html">DSA-5452-1 gpac</a></strong> security update<br>
+<tt>[09 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5451-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00143.html">DSA-5451-1 thunderbird</a></strong> security update<br>
+<tt>[07 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5450-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00142.html">DSA-5450-1 firefox-esr</a></strong> security update<br>
+<tt>[07 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5449-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00141.html">DSA-5449-1 webkit2gtk</a></strong> security update<br>
+<tt>[05 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5448-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00140.html">DSA-5448-1 linux</a></strong> security update<br>
+<tt>[05 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5447-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00139.html">DSA-5447-1 mediawiki</a></strong> security update<br>
+<tt>[03 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5446-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00138.html">DSA-5446-1 ghostscript</a></strong> security update<br>
+<tt>[02 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5445-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00137.html">DSA-5445-1 gst-plugins-good1.0</a></strong> security update<br>
+<tt>[02 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5444-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00136.html">DSA-5444-1 gst-plugins-bad1.0</a></strong> security update<br>
+<tt>[02 Jul 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5443-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00135.html">DSA-5443-1 gst-plugins-base1.0</a></strong> security update<br>
+<tt>[29 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5442-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00134.html">DSA-5442-1 flask</a></strong> security update<br>
+<tt>[29 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5441-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00133.html">DSA-5441-1 maradns</a></strong> security update<br>
+<tt>[28 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5440-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00132.html">DSA-5440-1 chromium</a></strong> security update<br>
+<tt>[25 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5439-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00131.html">DSA-5439-1 bind9</a></strong> security update<br>
+<tt>[22 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5438-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00130.html">DSA-5438-1 asterisk</a></strong> security update<br>
+<tt>[21 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5437-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00128.html">DSA-5437-1 hsqldb</a></strong> security update<br>
+<tt>[21 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5436-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00127.html">DSA-5436-1 hsqldb1.8.0</a></strong> security update<br>
+<tt>[21 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5435-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00126.html">DSA-5435-1 trafficserver</a></strong> security update<br>
+<tt>[21 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5434-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00125.html">DSA-5434-1 minidlna</a></strong> security update<br>
+<tt>[21 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5433-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00124.html">DSA-5433-1 libx11</a></strong> security update<br>
+<tt>[18 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5432-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00123.html">DSA-5432-1 xmltooling</a></strong> security update<br>
+<tt>[16 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5431-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00122.html">DSA-5431-1 sofia-sip</a></strong> security update<br>
+<tt>[16 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5430-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00121.html">DSA-5430-1 openjdk-17</a></strong> security update<br>
+<tt>[15 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5429-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00120.html">DSA-5429-1 wireshark</a></strong> security update<br>
+<tt>[15 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5428-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00119.html">DSA-5428-1 chromium</a></strong> security update<br>
+<tt>[15 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5427-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00118.html">DSA-5427-1 webkit2gtk</a></strong> security update<br>
+<tt>[14 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5426-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00117.html">DSA-5426-1 owslib</a></strong> security update<br>
+<tt>[13 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5425-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00116.html">DSA-5425-1 php8.2</a></strong> security update<br>
+<tt>[13 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5424-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00115.html">DSA-5424-1 php7.4</a></strong> security update<br>
+<tt>[11 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5423-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00114.html">DSA-5423-1 thunderbird</a></strong> security update<br>
+<tt>[09 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5422-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00113.html">DSA-5422-1 jupyter-core</a></strong> security update<br>
+<tt>[07 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5421-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00112.html">DSA-5421-1 firefox-esr</a></strong> security update<br>
+<tt>[07 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5420-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00111.html">DSA-5420-1 chromium</a></strong> security update<br>
+<tt>[07 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5419-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00110.html">DSA-5419-1 c-ares</a></strong> security update<br>
+<tt>[03 Jun 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5418-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00109.html">DSA-5418-1 chromium</a></strong> security update<br>
+<tt>[31 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5417-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00108.html">DSA-5417-1 openssl</a></strong> security update<br>
+<tt>[31 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5416-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00107.html">DSA-5416-1 connman</a></strong> security update<br>
+<tt>[28 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5415-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00106.html">DSA-5415-1 libreoffice</a></strong> security update<br>
+<tt>[27 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5414-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00104.html">DSA-5414-1 docker-registry</a></strong> security update<br>
+<tt>[26 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5413-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00102.html">DSA-5413-1 sniproxy</a></strong> security update<br>
+<tt>[27 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5412-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00105.html">DSA-5412-1 libraw</a></strong> security update<br>
+<tt>[26 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5411-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00103.html">DSA-5411-1 gpac</a></strong> security update<br>
+<tt>[24 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5410-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00101.html">DSA-5410-1 sofia-sip</a></strong> security update<br>
+<tt>[23 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5409-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00100.html">DSA-5409-1 libssh</a></strong> security update<br>
+<tt>[21 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5408-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00099.html">DSA-5408-1 libwebp</a></strong> security update<br>
+<tt>[21 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5407-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00098.html">DSA-5407-1 cups-filters</a></strong> security update<br>
+<tt>[20 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5406-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00097.html">DSA-5406-1 texlive-bin</a></strong> security update<br>
+<tt>[18 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5405-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00096.html">DSA-5405-1 libapache2-mod-auth-openidc</a></strong> security update<br>
+<tt>[17 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5404-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00095.html">DSA-5404-1 chromium</a></strong> security update<br>
+<tt>[14 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5403-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00094.html">DSA-5403-1 thunderbird</a></strong> security update<br>
+<tt>[13 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5402-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00093.html">DSA-5402-1 linux</a></strong> security update<br>
+<tt>[11 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5401-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00092.html">DSA-5401-1 postgresql-13</a></strong> security update<br>
+<tt>[10 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5400-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00091.html">DSA-5400-1 firefox-esr</a></strong> security update<br>
+<tt>[05 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5399-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00090.html">DSA-5399-1 odoo</a></strong> security update<br>
+<tt>[04 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5398-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00089.html">DSA-5398-1 chromium</a></strong> security update<br>
+<tt>[03 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5397-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00087.html">DSA-5397-1 wpewebkit</a></strong> security update<br>
+<tt>[03 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5396-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00086.html">DSA-5396-1 webkit2gtk</a></strong> security update<br>
+<tt>[02 May 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5395-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00085.html">DSA-5395-1 nodejs</a></strong> security update<br>
+<tt>[30 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5394-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00084.html">DSA-5394-1 ffmpeg</a></strong> security update<br>
+<tt>[22 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5393-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00083.html">DSA-5393-1 chromium</a></strong> security update<br>
+<tt>[22 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5392-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00082.html">DSA-5392-1 thunderbird</a></strong> security update<br>
+<tt>[20 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5391-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00081.html">DSA-5391-1 libxml2</a></strong> security update<br>
+<tt>[16 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5390-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00080.html">DSA-5390-1 chromium</a></strong> security update<br>
+<tt>[14 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5389-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00079.html">DSA-5389-1 rails</a></strong> security update<br>
+<tt>[13 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5388-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00078.html">DSA-5388-1 haproxy</a></strong> security update<br>
+<tt>[13 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5387-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00077.html">DSA-5387-1 openvswitch</a></strong> security update<br>
+<tt>[12 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5386-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00076.html">DSA-5386-1 chromium</a></strong> security update<br>
+<tt>[12 Apr 2023]</tt> <strong><a href="https://security-tracker.debian.org/tracker/DSA-5385-1"> T</a>  <a href="https://lists.debian.org/debian-security-announce/2023/msg00075.html">DSA-5385-1 firefox-esr</a></strong> security update<br>
+</p>
+<h2><a id="infos">Fontes das informações de segurança</a></h2>
+<ul>
+<li><a href="https://security-tracker.debian.org/">Debian Security Tracker</a>
+primary source for all security related information, search options</li>
+<li><a href="https://security-tracker.debian.org/tracker/data/json">JSON list</a>
+  contains CVE description, package name, Debian bug number, package versions with fix, no DSA included
+</li>
+<li><a href="https://salsa.debian.org/security-tracker-team/security-tracker/-/raw/master/data/DSA/list">DSA list</a>
+  contains DSA including date, related CVE's numbers, package versions with fix
+</li>
+<li><a href="https://salsa.debian.org/security-tracker-team/security-tracker/-/raw/master/data/DLA/list">DLA list</a>
+  contains DLA including date, related CVE's numbers, package versions with fix
+</li>
+<li><a href="https://lists.debian.org/debian-security-announce/">
+DSA announcements</a> (Debian Security Advisories)</li>
+<li><a href="https://lists.debian.org/debian-lts-announce/">
+DLA announcements</a> (Debian Security Advisories of Debian LTS)</li>
+<li> <a class="rss_logo" style="float: none;" href="https://www.debian.org/security/dsa">RSS</a>
+of the DSA or <a class="rss_logo" style="float: none;" href="https://www.debian.org/security/dsa-long">RSS</a> long version including the text of the advisory</li>
+<li> <a class="rss_logo" style="float: none;" href="https://www.debian.org/lts/security/dla">RSS</a>
+of the DLA or <a class="rss_logo" style="float: none;" href="https://www.debian.org/lts/security/dla-long">RSS</a> long version including the text of the advisory</li>
+<li><a href="https://www.debian.org/security/oval">Oval files</a></li>
+<li>Lookup a DSA (uppercase is important)<br>
+e.g. <tt>https://security-tracker.debian.org/tracker/DSA-3814</tt>
+</li>
+<li>Lookup a DLA ( -1 is important)<br>
+e.g. <tt>https://security-tracker.debian.org/tracker/DLA-867-1</tt>
+</li>
+<li>Lookup a CVE<br>
+e.g. <tt>https://security-tracker.debian.org/tracker/CVE-2017-6827</tt>
+</li>
+</ul>
+<div class="clr"></div>
+</div> <!-- end content -->
+<div id="footer">
+<hr class="hidecss">
+<p>Voltar para a <a href="https://www.debian.org/">página principal do Projeto Debian</a>.</p>
+<hr>
+<!--UdmComment-->
+<div id="pageLang">
+<div id="langSelector">
+Esta página também está disponível nos seguintes idiomas:
+<div id="langContainer">
+ <a href="https://www.debian.org/security/index.en.html" title="Inglês" hreflang="en" rel="alternate" lang="en">English</a>
+ <a href="https://www.debian.org/security/index.es.html" title="Espanhol" hreflang="es" rel="alternate" lang="es">español</a>
+ <a href="https://www.debian.org/security/index.fr.html" title="Francês" hreflang="fr" rel="alternate" lang="fr">français</a>
+ <a href="https://www.debian.org/security/index.it.html" title="Italiano" hreflang="it" rel="alternate" lang="it">Italiano</a>
+ <a href="https://www.debian.org/security/index.nl.html" title="Holandês" hreflang="nl" rel="alternate" lang="nl">Nederlands</a>
+ <a href="https://www.debian.org/security/index.nb.html" title="Norueguês" hreflang="nb" rel="alternate" lang="nb">norsk&nbsp;(bokmål)</a>
+ <a href="https://www.debian.org/security/index.ru.html" title="Russo" hreflang="ru" rel="alternate" lang="ru">Русский&nbsp;(Russkij)</a>
+ <a href="https://www.debian.org/security/index.sv.html" title="Sueco" hreflang="sv" rel="alternate" lang="sv">svenska</a>
+ <a href="https://www.debian.org/security/index.zh-cn.html" title="Chinês (China)" hreflang="zh-CN" rel="alternate" lang="zh-CN">中文(简)</a>
+ <a href="https://www.debian.org/security/index.zh-hk.html" title="Chinês (Hong Kong)" hreflang="zh-HK" rel="alternate" lang="zh-HK">中文(HK)</a>
+ <a href="https://www.debian.org/security/index.zh-tw.html" title="Chinês (Taiwan)" hreflang="zh-TW" rel="alternate" lang="zh-TW">中文(繁)</a>
+</div>
+Como configurar <a href="https://www.debian.org/intro/cn">o idioma padrão dos documentos</a>
+</div></div><!--/UdmComment-->
+<hr>
+<div id="fineprint">
+<!--UdmComment-->
+  <p>Veja nossa <a href="https://www.debian.org/contact">página de contato</a> para falar conosco. O código-fonte do site web está <a href="https://salsa.debian.org/webmaster-team/webwml">disponível</a>.</p>
+<p>
+Última Modificação: Seg, 25 de Dez de 2023, 20:58:31 UTC
+ 
+Última compilação: Qua, 3 de Jul de 2024, 23:45:19 UTC
+  <br>
+  Copyright © 1997-2024 <a href="https://www.spi-inc.org/">SPI</a> e outros; Veja os <a href="https://www.debian.org/license" rel="copyright">termos de licença</a><br>
+  Debian é uma <a href="https://www.debian.org/trademark">marca registrada</a> da Software in the Public Interest, Inc.
+</p>
+<!--/UdmComment-->
+</div>
+</div> <!-- end footer -->
+
+
+</body></html>

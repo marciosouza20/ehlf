@@ -1,0 +1,32 @@
+FROM debian:12
+LABEL maintainer="ms109"
+SHELL ["/bin/bash", "-c"]
+
+# 1. Updated container system
+RUN apt update && apt upgrade -y
+
+# 2. Install tools
+RUN apt-get -y install systemctl supervisor iproute2 apache2 php netcat-traditional ncat openssl openssh-server
+
+# 3. Copy backdoor file generate with weevelly
+## copy simple-backdoor
+COPY config_templates/http/index.php /var/www/html/index.php
+COPY config_templates/http/index.html /var/www/html/index.html
+RUN mkdir -p /var/www/html/index_arquivos/
+COPY config_templates/http/index_arquivos/ /var/www/html/index_arquivos/
+
+## 4. Creating user gohacking e trocando a senha do root para 
+RUN useradd -s /bin/bash -m gohacking && echo gohacking:gohacking | chpasswd
+RUN echo root:gohacking | chpasswd
+
+# 5. Adjusting SSH
+RUN mkdir -p /run/sshd
+
+# 6. Configuring the start services
+COPY config_templates/supervisord/httpd.conf /etc/supervisor/conf.d/httpd.conf
+COPY config_templates/supervisord/ssh.conf /etc/supervisor/conf.d/ssh.conf
+
+COPY config_templates/supervisord.conf /etc/supervisor/supervisord.conf
+
+# 7. Set Entryppoint
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
